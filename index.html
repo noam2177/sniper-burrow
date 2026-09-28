@@ -37,16 +37,16 @@ var pick = document.getElementById("pick");
 var skillBox = document.getElementById("skills");
 var rifleBox = document.getElementById("rifles");
 var rifles = [
-  { name: "צופי קל", color: "#d6c15a", sway: 5, zoom: 1, damage: 1, cycle: 180, spread: 1.5, kick: 3, pierce: 1, scare: 0, hit: 9, pro: "צרור מהיר", con: "כדור קטן" },
-  { name: "כבד", color: "#c45a3a", sway: 13, zoom: 1, damage: 4, cycle: 980, spread: 1.15, kick: 26, hit: 18, pierce: 1, scare: 50, pro: "בועט ומפיל", con: "הכוונת קופצת" },
-  { name: "בריח מהיר", color: "#6ec8b8", sway: 7, zoom: 1.4, damage: 2, cycle: 210, spread: 0.85, kick: 9, hit: 11, pierce: 1, scare: 0, pro: "בריח קצר", con: "רתע מצטבר" },
-  { name: "רועש", color: "#e0a15a", sway: 10, zoom: 1, damage: 3, cycle: 640, spread: 1, kick: 14, hit: 13, pierce: 1, scare: 190, pro: "מפזר את השדה", con: "כולם זזים" },
-  { name: "שקט", color: "#b7d4c8", sway: 6, zoom: 1.3, damage: 2, cycle: 460, spread: 0.45, kick: 1, hit: 10, pierce: 1, scare: 0, pro: "בלי בעיטה", con: "נזק בינוני" },
-  { name: "זום ארוך", color: "#c46ad4", sway: 8, zoom: 2.8, damage: 2, cycle: 720, spread: 0.28, kick: 6, hit: 7, pierce: 1, scare: 0, scope: true, pro: "עיגול צר ומדויק", con: "קשה לתפוס תנועה" },
-  { name: "זום קצר", color: "#6aa0e8", sway: 8, zoom: 0.7, damage: 2, cycle: 390, spread: 1.7, kick: 5, hit: 24, pierce: 1, scare: 0, pro: "חרוט רחב", con: "בלי הגדלה" },
-  { name: "נזק גבוה", color: "#e07a4a", sway: 12, zoom: 1.8, damage: 5, cycle: 1180, spread: 0.7, kick: 18, hit: 12, pierce: 2, scare: 0, pro: "חודר שניים", con: "המתנה ארוכה" },
-  { name: "יציב", color: "#9dce78", sway: 2, zoom: 1.4, damage: 2, cycle: 520, spread: 0.3, kick: 0, hit: 12, pierce: 1, scare: 0, pro: "כמעט בלי תנודה", con: "קצב רגיל" },
-  { name: "בריח איטי", color: "#8a6ad4", sway: 5, zoom: 2.2, damage: 4, cycle: 1400, spread: 0.25, kick: 4, hit: 14, pierce: 1, scare: 0, scope: true, pro: "ירייה ראשונה נקייה", con: "בריח ארוך" }
+  { name: "צופי קל", color: "#d6c15a", sway: 5, zoom: 1, damage: 1, cycle: 180, spread: 1.5, kick: 3, pierce: 1, scare: 0, hit: 9, voice: "crack", shape: "carbine", pro: "צרור מהיר", con: "כדור קטן" },
+  { name: "כבד", color: "#c45a3a", sway: 13, zoom: 1, damage: 4, cycle: 980, spread: 1.15, kick: 26, hit: 18, pierce: 1, scare: 50, voice: "boom", shape: "heavy", pro: "בועט ומפיל", con: "הכוונת קופצת" },
+  { name: "בריח מהיר", color: "#6ec8b8", sway: 7, zoom: 1.4, damage: 2, cycle: 210, spread: 0.85, kick: 9, hit: 11, pierce: 1, scare: 0, voice: "snap", shape: "bolt", pro: "בריח קצר", con: "רתע מצטבר" },
+  { name: "רועש", color: "#e0a15a", sway: 10, zoom: 1, damage: 3, cycle: 640, spread: 1, kick: 14, hit: 13, pierce: 1, scare: 190, voice: "blast", shape: "loud", pro: "מפזר את השדה", con: "כולם זזים" },
+  { name: "שקט", color: "#b7d4c8", sway: 6, zoom: 1.3, damage: 2, cycle: 460, spread: 0.45, kick: 1, hit: 10, pierce: 1, scare: 0, voice: "hush", shape: "can", pro: "בלי בעיטה", con: "נזק בינוני" },
+  { name: "זום ארוך", color: "#c46ad4", sway: 8, zoom: 2.8, damage: 2, cycle: 720, spread: 0.28, kick: 6, hit: 7, pierce: 1, scare: 0, scope: true, voice: "ping", shape: "scope", pro: "עיגול צר ומדויק", con: "קשה לתפוס תנועה" },
+  { name: "זום קצר", color: "#6aa0e8", sway: 8, zoom: 0.7, damage: 2, cycle: 390, spread: 1.7, kick: 5, hit: 24, pierce: 1, scare: 0, voice: "pop", shape: "bull", pro: "חרוט רחב", con: "בלי הגדלה" },
+  { name: "נזק גבוה", color: "#e07a4a", sway: 12, zoom: 1.8, damage: 5, cycle: 1180, spread: 0.7, kick: 18, hit: 12, pierce: 2, scare: 0, voice: "cannon", shape: "amr", pro: "חודר שניים", con: "המתנה ארוכה" },
+  { name: "יציב", color: "#9dce78", sway: 2, zoom: 1.4, damage: 2, cycle: 520, spread: 0.3, kick: 0, hit: 12, pierce: 1, scare: 0, voice: "tick", shape: "match", pro: "כמעט בלי תנודה", con: "קצב רגיל" },
+  { name: "בריח איטי", color: "#8a6ad4", sway: 5, zoom: 2.2, damage: 4, cycle: 1400, spread: 0.25, kick: 4, hit: 14, pierce: 1, scare: 0, scope: true, voice: "deep", shape: "long", pro: "ירייה ראשונה נקייה", con: "בריח ארוך" }
 ];
 var labels = [
   ["vision", "ראייה"],
@@ -85,6 +85,14 @@ var crawlers = [];
 var stills = [];
 var burrows = [];
 var flashes = [];
+var tracers = [];
+var audioCtx = null;
+var zones = [
+  { id: "kandahar", title: "קנדהאר" },
+  { id: "normandy", title: "נורמנדי" },
+  { id: "pearl", title: "פרל הרבור" },
+  { id: "stalingrad", title: "סטלינגרד" }
+];
 var last = performance.now();
 var origin = { x: 450, y: 478 };
 
@@ -170,9 +178,50 @@ function targetsAlive() {
   return list;
 }
 
+function zoneNow() {
+  return zones[Math.floor((stage - 1) / 3) % zones.length];
+}
+function audio() {
+  var Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return null;
+  if (!audioCtx) audioCtx = new Ctx();
+  if (audioCtx.state === "suspended") audioCtx.resume();
+  return audioCtx;
+}
+function bang() {
+  var actx = audio();
+  if (!actx) return;
+  var now = actx.currentTime;
+  var voice = rifle.voice;
+  var osc = actx.createOscillator();
+  var gain = actx.createGain();
+  var freq = 240;
+  var dur = 0.12;
+  var peak = 0.18;
+  osc.type = "sawtooth";
+  if (voice === "crack") { freq = 1680; dur = 0.05; peak = 0.12; osc.type = "square"; }
+  else if (voice === "boom") { freq = 70; dur = 0.34; peak = 0.28; osc.type = "sine"; }
+  else if (voice === "snap") { freq = 980; dur = 0.04; peak = 0.14; osc.type = "square"; }
+  else if (voice === "blast") { freq = 180; dur = 0.28; peak = 0.26; osc.type = "sawtooth"; }
+  else if (voice === "hush") { freq = 420; dur = 0.06; peak = 0.04; osc.type = "sine"; }
+  else if (voice === "ping") { freq = 2200; dur = 0.09; peak = 0.1; osc.type = "sine"; }
+  else if (voice === "pop") { freq = 360; dur = 0.07; peak = 0.16; osc.type = "triangle"; }
+  else if (voice === "cannon") { freq = 55; dur = 0.42; peak = 0.3; osc.type = "sine"; }
+  else if (voice === "tick") { freq = 1400; dur = 0.03; peak = 0.08; osc.type = "square"; }
+  else if (voice === "deep") { freq = 130; dur = 0.22; peak = 0.2; osc.type = "triangle"; }
+  osc.frequency.setValueAtTime(freq, now);
+  osc.frequency.exponentialRampToValueAtTime(Math.max(40, freq * 0.45), now + dur);
+  gain.gain.setValueAtTime(peak, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+  osc.connect(gain);
+  gain.connect(actx.destination);
+  osc.start(now);
+  osc.stop(now + dur + 0.02);
+}
 function fire() {
   if (choosing || cool > 0) return;
   cool = waitMs();
+  bang();
   var s = swayNow();
   var aim = {
     x: mouse.x + (Math.random() - 0.5) * s * 2 + kickX,
@@ -180,7 +229,8 @@ function fire() {
   };
   kickX = (Math.random() - 0.5) * rifle.kick;
   kickY = -Math.abs(rifle.kick) * 0.45;
-  flashes.push({ x: origin.x, y: origin.y - 24, t: 0.08 });
+  flashes.push({ x: origin.x, y: origin.y - 24, t: 0.08, r: 6 + rifle.kick * 0.4 });
+  tracers.push({ x: origin.x, y: origin.y - 20, x2: aim.x, y2: aim.y, t: 0.12, w: 1 + rifle.damage * 0.4 });
   if (rifle.scare) {
     crawlers.forEach(function (c) {
       if (!c.alive) return;
@@ -335,37 +385,137 @@ function frame(now) {
   requestAnimationFrame(frame);
 }
 
-function drawField() {
-  var sky = ctx.createLinearGradient(0, 0, 0, 220);
-  sky.addColorStop(0, "#243044");
-  sky.addColorStop(1, "#6e7c58");
-  ctx.fillStyle = sky;
-  ctx.fillRect(0, 0, 900, 220);
-  ctx.fillStyle = "#5c6b3e";
-  ctx.beginPath();
-  ctx.moveTo(0, 180);
-  ctx.lineTo(180, 140);
-  ctx.lineTo(360, 170);
-  ctx.lineTo(560, 120);
-  ctx.lineTo(760, 160);
-  ctx.lineTo(900, 130);
-  ctx.lineTo(900, 230);
-  ctx.lineTo(0, 230);
-  ctx.fill();
+function drawZone(place) {
+  var sky = ctx.createLinearGradient(0, 0, 0, 240);
   var ground = ctx.createLinearGradient(0, 200, 0, 520);
-  ground.addColorStop(0, "#6a7d42");
-  ground.addColorStop(1, "#3e4c28");
+  if (place.id === "kandahar") {
+    sky.addColorStop(0, "#d7b07a");
+    sky.addColorStop(1, "#f0ddb4");
+    ground.addColorStop(0, "#c4a36a");
+    ground.addColorStop(1, "#8a6a3e");
+  } else if (place.id === "normandy") {
+    sky.addColorStop(0, "#8ea4b4");
+    sky.addColorStop(1, "#c5d0c4");
+    ground.addColorStop(0, "#6d8a58");
+    ground.addColorStop(1, "#4e6240");
+  } else if (place.id === "pearl") {
+    sky.addColorStop(0, "#f2c9a0");
+    sky.addColorStop(1, "#6eb0d4");
+    ground.addColorStop(0, "#3e8eae");
+    ground.addColorStop(1, "#1d4e68");
+  } else {
+    sky.addColorStop(0, "#d5dde4");
+    sky.addColorStop(1, "#eef2f4");
+    ground.addColorStop(0, "#e7eef2");
+    ground.addColorStop(1, "#b7c4cc");
+  }
+  ctx.fillStyle = sky;
+  ctx.fillRect(0, 0, 900, 230);
   ctx.fillStyle = ground;
   ctx.fillRect(0, 210, 900, 310);
-  ctx.fillStyle = "#2a261c";
+  if (place.id === "kandahar") {
+    ctx.fillStyle = "#b8894e";
+    ctx.beginPath();
+    ctx.moveTo(0, 200); ctx.lineTo(140, 150); ctx.lineTo(280, 190); ctx.lineTo(460, 140); ctx.lineTo(700, 180); ctx.lineTo(900, 150); ctx.lineTo(900, 230); ctx.lineTo(0, 230);
+    ctx.fill();
+    ctx.fillStyle = "#a36b45";
+    ctx.fillRect(80, 250, 90, 46);
+    ctx.fillRect(620, 270, 120, 40);
+    ctx.fillStyle = "#6b4630";
+    ctx.fillRect(108, 262, 16, 22);
+  } else if (place.id === "normandy") {
+    ctx.fillStyle = "#3f6a3a";
+    for (var h = 0; h < 5; h++) ctx.fillRect(40 + h * 180, 230, 28, 90);
+    ctx.fillStyle = "#d9d2bc";
+    ctx.fillRect(0, 400, 900, 40);
+    ctx.strokeStyle = "rgba(255,255,255,0.35)";
+    for (var r = 0; r < 18; r++) {
+      ctx.beginPath();
+      ctx.moveTo(20 + r * 50, 0);
+      ctx.lineTo(8 + r * 50, 80);
+      ctx.stroke();
+    }
+  } else if (place.id === "pearl") {
+    ctx.fillStyle = "#2c3d4a";
+    ctx.fillRect(40, 250, 160, 28);
+    ctx.fillRect(520, 240, 220, 34);
+    ctx.fillStyle = "#1b2830";
+    ctx.fillRect(70, 230, 18, 22);
+    ctx.fillRect(600, 214, 22, 28);
+    ctx.fillStyle = "#2f6b38";
+    ctx.beginPath();
+    ctx.moveTo(780, 300); ctx.lineTo(800, 210); ctx.lineTo(820, 300);
+    ctx.fill();
+  } else {
+    ctx.fillStyle = "#8d98a1";
+    ctx.fillRect(70, 230, 70, 80);
+    ctx.fillRect(160, 250, 40, 60);
+    ctx.fillRect(640, 220, 90, 100);
+    ctx.fillStyle = "#5c6770";
+    ctx.fillRect(82, 248, 12, 16);
+    ctx.fillRect(662, 240, 14, 18);
+  }
+  ctx.fillStyle = place.id === "stalingrad" ? "#9aa7b0" : "#2a261c";
   for (var i = 0; i < 14; i++) {
     ctx.fillRect(20 + i * 64, 448, 48, 16);
     ctx.fillRect(40 + i * 64, 462, 48, 14);
   }
+  ctx.fillStyle = "rgba(20,16,10,0.55)";
+  ctx.fillRect(300, 8, 300, 32);
+  ctx.fillStyle = "#f4ecd4";
+  ctx.font = "20px Segoe UI";
+  ctx.textAlign = "center";
+  ctx.fillText(place.title, 450, 30);
+}
+function drawGun() {
+  var x = origin.x;
+  var y = origin.y;
+  ctx.fillStyle = "#1b2414";
+  ctx.fillRect(x - 16, y - 8, 32, 18);
+  ctx.fillStyle = "#c8b48a";
+  ctx.beginPath();
+  ctx.arc(x - 6, y - 10, 6, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = rifle.color;
+  var shape = rifle.shape;
+  if (shape === "carbine") {
+    ctx.fillRect(x + 2, y - 18, 28, 4);
+    ctx.fillRect(x + 8, y - 24, 8, 6);
+  } else if (shape === "heavy") {
+    ctx.fillRect(x, y - 16, 40, 8);
+    ctx.fillRect(x + 28, y - 22, 10, 6);
+  } else if (shape === "bolt") {
+    ctx.fillRect(x + 2, y - 20, 36, 3);
+    ctx.fillRect(x + 16, y - 24, 6, 4);
+  } else if (shape === "loud") {
+    ctx.fillRect(x, y - 18, 34, 7);
+    ctx.beginPath();
+    ctx.arc(x + 36, y - 14, 6, 0, Math.PI * 2);
+    ctx.fill();
+  } else if (shape === "can") {
+    ctx.fillRect(x + 2, y - 18, 30, 3);
+    ctx.fillRect(x + 28, y - 21, 14, 8);
+  } else if (shape === "scope") {
+    ctx.fillRect(x + 2, y - 20, 42, 3);
+    ctx.strokeStyle = rifle.color;
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x + 14, y - 30, 16, 8);
+  } else if (shape === "bull") {
+    ctx.fillRect(x + 4, y - 16, 18, 6);
+  } else if (shape === "amr") {
+    ctx.fillRect(x - 4, y - 18, 52, 6);
+    ctx.fillRect(x + 8, y - 24, 10, 6);
+  } else if (shape === "match") {
+    ctx.fillRect(x + 2, y - 19, 34, 3);
+    ctx.fillRect(x + 20, y - 16, 4, 8);
+  } else {
+    ctx.fillRect(x + 2, y - 20, 48, 3);
+    ctx.fillRect(x + 36, y - 26, 8, 6);
+  }
 }
 
 function draw() {
-  drawField();
+  drawZone(zoneNow());
   var range = seeRange();
   ctx.fillStyle = "rgba(10, 14, 8, 0.45)";
   ctx.fillRect(0, 0, 900, 520);
@@ -410,18 +560,22 @@ function draw() {
   ctx.beginPath();
   ctx.arc(aimX, aimY, 6 + rifle.hit * 0.35, 0, Math.PI * 2);
   ctx.stroke();
-  ctx.fillStyle = "#1b2414";
-  ctx.fillRect(origin.x - 16, origin.y - 8, 32, 18);
-  ctx.fillStyle = "#c8b48a";
-  ctx.beginPath();
-  ctx.arc(origin.x - 6, origin.y - 10, 6, 0, Math.PI * 2);
-  ctx.fill();
   ctx.fillStyle = rifle.color;
-  ctx.fillRect(origin.x + 2, origin.y - 16 - rifle.zoom * 10, 5 + rifle.damage, 28 + rifle.zoom * 10);
+  ctx.lineWidth = rifle.damage;
+  tracers.forEach(function (tr) {
+    ctx.globalAlpha = Math.max(0, tr.t * 6);
+    ctx.beginPath();
+    ctx.moveTo(tr.x, tr.y);
+    ctx.lineTo(tr.x2, tr.y2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  });
+  tracers = tracers.filter(function (tr) { tr.t -= 0.016; return tr.t > 0; });
+  drawGun();
   flashes.forEach(function (f) {
     ctx.fillStyle = "rgba(255, 220, 140, 0.8)";
     ctx.beginPath();
-    ctx.arc(f.x, f.y, 8, 0, Math.PI * 2);
+    ctx.arc(f.x, f.y, f.r || 8, 0, Math.PI * 2);
     ctx.fill();
   });
   flashes = flashes.filter(function (f) { f.t -= 0.016; return f.t > 0; });
@@ -435,7 +589,14 @@ function draw() {
     ctx.strokeRect(aimX - 90, aimY - 90, 180, 180);
   }
   var secs = Math.max(0, Math.ceil(clock));
-  hud.textContent = "שעון " + secs + "   הריגות " + hits + "/8   ניקוד " + score + "   שלב " + stage;
+  var place = zoneNow();
+  ctx.fillStyle = "rgba(20,16,10,0.78)";
+  ctx.fillRect(280, 8, 340, 34);
+  ctx.fillStyle = "#f6edd4";
+  ctx.font = "22px Segoe UI";
+  ctx.textAlign = "center";
+  ctx.fillText(place.title, 450, 32);
+  hud.textContent = place.title + "   שעון " + secs + "   הריגות " + hits + "/8   ניקוד " + score + "   שלב " + stage;
   gun.textContent = rifle.name + " · " + rifle.pro + " · " + rifle.con + " · נשימה " + breath.toFixed(1) + " · " + labels.map(function (p) {
     return p[1] + " " + skills[p[0]];
   }).join("  ");
